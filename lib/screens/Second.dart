@@ -33,10 +33,36 @@ class _SecondPageViewState extends State<SecondPageView> {
             children: [
               Text(arg.toString()),
               Text(box.read('email').toString()),
+              Center(
+                child: Row(
+                  children: [
+                    RaisedButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text("Back"),
+                      onPressed: () {
+                        box.erase();
+                        Get.updateLocale(Get.deviceLocale);
+                        Get.offAllNamed('/main');
+                      },
+                    ),
+                    RaisedButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text("next"),
+                      onPressed: () {
+                        Get.toNamed('/thirdPage');
+                      },
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
       ),
     );
   }
+
+  button() {}
 }
